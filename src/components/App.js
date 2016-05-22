@@ -7,7 +7,9 @@ export default class App extends Component {
         return (
             <div>
                 <Navbar />
-                {this.props.children}
+                <div className="ui segment">
+                    {this.props.children}
+                </div>
             </div>
         );
     }

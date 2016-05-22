@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchPeoples: () => {
-            dispatch(fetchPeoples()).then((response)=> {
+        fetchPeoples: (page) => {
+            dispatch(fetchPeoples(page)).then((response)=> {
                 !response.error ? dispatch(fetchPeoplesSuccess(response.payload)) : dispatch(fetchPeoplesFailure(response.payload));
             })
         }

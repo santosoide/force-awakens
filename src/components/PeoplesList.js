@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import PeopleAction from '../actions/peoples';
 
 class PeoplesList extends Component {
 
     componentWillMount() {
-        this.props.fetchPeoples();
+        this.props.fetchPeoples(1);
     }
 
     renderPeoples(peoples) {
-        const datas =peoples.results
+        if (!Array.isArray(peoples.results)) {
+            return false;
+        }
 
-        return datas.map((people) => {
+        return peoples.results.map((people) => {
             return (
                 <div className="ui card">
                     <div className="content">
@@ -33,12 +36,6 @@ class PeoplesList extends Component {
                                     <i className="right triangle icon"></i>
                                     <div className="content">
                                         Height : {people.height}
-                                    </div>
-                                </div>
-                                <div className="item">
-                                    <i className="right triangle icon"></i>
-                                    <div className="content">
-                                        Mass : {people.mass}
                                     </div>
                                 </div>
                                 <div className="item">
@@ -77,7 +74,12 @@ class PeoplesList extends Component {
         })
     }
 
+    testLoad() {
+        console.log('load more');
+    }
+
     render() {
+
         const { peoples, loading, error } = this.props.peoplesList;
 
         if (loading) {
@@ -91,7 +93,7 @@ class PeoplesList extends Component {
                 <div className="ui yellow message">
                     The Star Wars Force Awakens - People
                 </div>
-                <div className="ui four cards">
+                <div className="ui five cards">
                     {this.renderPeoples(peoples)}
                 </div>
             </div>

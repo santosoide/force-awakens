@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 
 const Navbar = () => {
     return (
-        <div className="ui pointing menu fixed large">
+        <div className="ui pointing menu large">
             <Link property="Home" to="/" activeClassName="active" className="item">Home</Link>
             <Link property="People" to="/people" activeClassName="active" className="item">People</Link>
             <Link property="Planets" to="/planets" activeClassName="active" className="item">Planets</Link>

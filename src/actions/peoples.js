@@ -7,10 +7,10 @@ export const FETCH_PEOPLES_FAILURE = 'FETCH_PEOPLES_FAILURE';
 
 const API_URL = 'http://swapi.co/api';
 
-export function fetchPeoples() {
+export function fetchPeoples(page) {
     const request = axios({
         method: 'get',
-        url: `${API_URL}/people/?format=json`,
+        url: `${API_URL}/people/?page=${page}&format=json`,
         headers: []
     });
 
