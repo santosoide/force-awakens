@@ -1,11 +1,23 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import PeopleAction from '../actions/peoples';
+import Infinite from 'react-infinite'
+import {fetchPeoples,fetchPeoplesSuccess,fetchPeoplesFailure} from '../actions/peoples';
 
 class PeoplesList extends Component {
 
+    constructor(props) {
+        super(props);
+        this.nextPage = 1;
+        this.loader = this.loader.bind(this)
+    }
+
     componentWillMount() {
-        this.props.fetchPeoples(1);
+        this.props.fetchPeoples(this.nextPage);
+    }
+
+    loader() {
+        this.nextPage += 1;
+        this.props.fetchPeoples(this.nextPage);
     }
 
     renderPeoples(peoples) {
@@ -74,8 +86,10 @@ class PeoplesList extends Component {
         })
     }
 
-    testLoad() {
-        console.log('load more');
+    elementInfiniteLoad() {
+        return <div className="infinite-list-item">
+            Loading...
+        </div>;
     }
 
     render() {
@@ -94,7 +108,15 @@ class PeoplesList extends Component {
                     The Star Wars Force Awakens - People
                 </div>
                 <div className="ui five cards">
-                    {this.renderPeoples(peoples)}
+                    <Infinite elementHeight={200}
+                              preloadBatchSize={Infinite.containerHeightScaleFactor(2)}
+                              preloadAdditionalHeight={Infinite.containerHeightScaleFactor(2)}
+                              onInfiniteLoad={this.loader}
+                              infiniteLoadBeginEdgeOffset={112}
+                              loadingSpinnerDelegate={this.elementInfiniteLoad()}
+                              useWindowAsScrollContainer>
+                        {this.renderPeoples(peoples)}
+                    </Infinite>
                 </div>
             </div>
         );

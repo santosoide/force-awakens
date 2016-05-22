@@ -1,6 +1,5 @@
 import React ,{Component}from 'react';
 import People from '../components/People';
-import Starships from '../components/Starship';
 
 export default class Home extends Component {
 
@@ -8,7 +7,6 @@ export default class Home extends Component {
         return (
             <div>
                 <People/>
-                <Starships/>
             </div>
         );
     }
