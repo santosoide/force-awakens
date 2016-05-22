@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import Infinite from 'react-infinite'
-import {fetchPeoples,fetchPeoplesSuccess,fetchPeoplesFailure} from '../actions/peoples';
 
 class PeoplesList extends Component {
 
     constructor(props) {
         super(props);
-        this.nextPage = 1;
+        this.nextPage = 0;
         this.loader = this.loader.bind(this)
     }
 
@@ -87,9 +86,11 @@ class PeoplesList extends Component {
     }
 
     elementInfiniteLoad() {
-        return <div className="infinite-list-item">
-            Loading...
-        </div>;
+        return (
+            <div className="ui yellow message">
+                Loading...
+            </div>
+        )
     }
 
     render() {
@@ -97,9 +98,21 @@ class PeoplesList extends Component {
         const { peoples, loading, error } = this.props.peoplesList;
 
         if (loading) {
-            return <div className="container"><h1>People</h1><h3>Loading...</h3></div>
+            return (
+                <div className="ui segment">
+                    <div className="ui yellow message">
+                        Loading...
+                    </div>
+                </div>
+            )
         } else if (error) {
-            return <div className="alert alert-danger">Error: {error.message}</div>
+            return (
+                <div className="ui segment">
+                    <div className="ui yellow message">
+                        End Pages - The Star Wars Force Awakens - People
+                    </div>
+                </div>
+            )
         }
 
         return (
