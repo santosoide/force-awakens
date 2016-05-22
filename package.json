@@ -1,24 +1,25 @@
 {
-  "name": "geek-talent",
+  "name": "force-awakens",
   "version": "0.1.0",
-  "description": "A boilerplate for running a Webpack workflow in Node express",
+  "description": "All the Star Wars data you've ever wanted: Planets, Spaceships, Vehicles, People, Films and Species From all SEVEN Star Wars films",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cyberid41/geek-talent.git"
+    "url": "https://github.com/cyberid41/force-awakens.git"
   },
   "keywords": [
     "express",
     "webpack",
     "node",
-    "react"
+    "react",
+    "sematic-ui"
   ],
   "author": "Edi Santoso <edicyber@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cyberid41/geek-talent/issues"
+    "url": "https://github.com/cyberid41/force-awakens/issues"
   },
-  "homepage": "https://github.com/cyberid41/geek-talent",
+  "homepage": "https://github.com/cyberid41/force-awakens",
   "scripts": {
     "test": "",
     "start": "node server",
