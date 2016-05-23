@@ -32,9 +32,8 @@ class Stars extends Component {
     render() {
 
         return (
-        <div className="ui four column centered grid">
-            <div className="column">
-                <div className="ui segment">
+            <div className="ui four column grid stackable">
+                <div className="column centered">
                     <div className="ui green message">
                         <p style={{textAlign:'center'}}>The Star Wars Force Awakens</p>
                     </div>
@@ -48,7 +47,6 @@ class Stars extends Component {
                     </div>
                 </div>
             </div>
-        </div>
         )
     }
 }

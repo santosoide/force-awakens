@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
 
 const StarCard = ({ star }) => (
-    <div className="ui card">
+    <div className="ui fluid card">
         <div className="content">
             <div className="header">{star.name}</div>
             <div className="description">
