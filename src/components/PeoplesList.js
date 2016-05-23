@@ -73,9 +73,9 @@ class PeoplesList extends Component {
                                 <i className="like icon"></i>
                                 Like
                               </span>
-                              <span className="right floated star">
-                                <i className="star icon"></i>
-                                <Link property="detail" to={`people/${people.id}`}>See More</Link>
+                              <span className="right floated">
+                                <i className="long arrow right icon"></i>
+                                <Link to={`people/${people.id}`}>See More</Link>
                               </span>
                     </div>
                 </div>
