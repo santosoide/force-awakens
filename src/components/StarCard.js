@@ -61,7 +61,6 @@ const StarCard = ({ star }) => (
 );
 
 StarCard.propTypes = {
-    onClick: PropTypes.func.isRequired,
     star: PropTypes.object.isRequired
 };
 

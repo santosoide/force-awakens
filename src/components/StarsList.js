@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import Infinite from 'react-infinite'
 import StarCard from '../components/StarCard'
 
-const StarsList = ({stars, loader, hooks}) => (
+const StarsList = ({stars, loader}) => (
     <Infinite elementHeight={210}
               preloadBatchSize={Infinite.containerHeightScaleFactor(2)}
               preloadAdditionalHeight={Infinite.containerHeightScaleFactor(2)}
@@ -23,8 +23,7 @@ const StarsList = ({stars, loader, hooks}) => (
 
 StarsList.propTypes = {
     stars: PropTypes.array.isRequired,
-    loader: PropTypes.func.isRequired,
-    hooks: PropTypes.func.isRequired
+    loader: PropTypes.func.isRequired
 };
 
 export default StarsList

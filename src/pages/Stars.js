@@ -41,9 +41,7 @@ class Stars extends Component {
                         <StarsList
                             stars={this.props.stars}
                             loader={() => { this.nextPagination() }}
-                            hooks={(url) => {
-                            this.openHooks(url)
-                    }}/>
+                        />
                     </div>
                 </div>
             </div>
