@@ -1,7 +1,7 @@
 import React ,{Component} from 'react';
 import PeopleListContainer from '../containers/PeopleListContainer';
 
-class PlanetsIndex extends Component {
+class PeopleIndex extends Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ class PlanetsIndex extends Component {
     }
 }
 
-export default PlanetsIndex;
+export default PeopleIndex;

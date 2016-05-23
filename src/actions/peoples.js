@@ -4,7 +4,12 @@ import axios from 'axios';
 export const FETCH_PEOPLES = 'FETCH_PEOPLES';
 export const FETCH_PEOPLES_SUCCESS = 'FETCH_PEOPLES_SUCCESS';
 export const FETCH_PEOPLES_FAILURE = 'FETCH_PEOPLES_FAILURE';
-export const SAVE_SCROLL_POSITION = 'SAVE_SCROLL_POSITION';
+
+// fetch People
+export const FETCH_PEOPLE = 'FETCH_PEOPLE';
+export const FETCH_PEOPLE_SUCCESS = 'FETCH_PEOPLE_SUCCESS';
+export const FETCH_PEOPLE_FAILURE = 'FETCH_PEOPLE_FAILURE';
+export const RESET_ACTIVE_PEOPLE = 'RESET_ACTIVE_PEOPLE';
 
 const API_URL = 'http://swapi.co/api';
 
@@ -35,9 +40,28 @@ export function fetchPeoplesFailure(error) {
     };
 }
 
-export function savePosition(position) {
+// fetch People
+export function fetchPeople(id) {
+    const request = axios.get(`${API_URL}/people/${id}`);
+
     return {
-        type: SAVE_SCROLL_POSITION,
-        position
-    }
+        type: FETCH_PEOPLE,
+        payload: request
+    };
+}
+
+
+export function fetchPeopleSuccess(activePeople) {
+
+    return {
+        type: FETCH_PEOPLE_SUCCESS,
+        payload: activePeople
+    };
+}
+
+export function fetchPeopleFailure(error) {
+    return {
+        type: FETCH_PEOPLE_FAILURE,
+        payload: error
+    };
 }
