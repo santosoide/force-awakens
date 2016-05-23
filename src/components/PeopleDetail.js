@@ -63,18 +63,32 @@ class PeopleDetail extends Component {
                                     Eye Color : {people.eye_color}
                                 </div>
                             </div>
+                            <div className="item">
+                                <i className="right triangle icon"></i>
+                                <div className="content">
+                                    Home : {people.hair_color}
+                                </div>
+                            </div>
+                            <div className="item">
+                                <i className="right triangle icon"></i>
+                                <div className="content">
+                                    Vehicles : {people.eye_color}
+                                </div>
+                            </div>
+                            <div className="item">
+                                <i className="right triangle icon"></i>
+                                <div className="content">
+                                    Species : {people.skin_color}
+                                </div>
+                            </div>
+                            <div className="item">
+                                <i className="right triangle icon"></i>
+                                <div className="content">
+                                    Starships : {people.eye_color}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="extra content">
-                              <span className="left floated like">
-                                <i className="like icon"></i>
-                                Like
-                              </span>
-                              <span className="right floated star">
-                                <i className="star icon"></i>
-                                <Link property="detail" to={`people/${people.id}`}>See More</Link>
-                              </span>
                 </div>
             </div>
         );

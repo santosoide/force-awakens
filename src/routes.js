@@ -14,12 +14,7 @@ export default (
             <IndexRoute component={HomePage}/>
             <Route path="people" component={PeoplePage}/>
             <Route path="people/:id" component={PeopleShow}/>
-            <Route path="planets" component={HomePage}/>
-            <Route path="planets/:id" component={HomePage}/>
-            <Route path="starships" component={HomePage}/>
-            <Route path="starships:id" component={HomePage}/>
         </Route>
-        <Route path="/signup" component={SignUpPage}/>
         <Route path="/signin" component={SignInPage}/>
         <Route path="*" component={NotFound}/>
     </Router>

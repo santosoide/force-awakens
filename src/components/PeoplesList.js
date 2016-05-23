@@ -6,7 +6,7 @@ class PeoplesList extends Component {
 
     constructor(props) {
         super(props);
-        this.nextPage = 0;
+        this.nextPage = 1;
         this.loader = this.loader.bind(this)
     }
 
@@ -119,13 +119,13 @@ class PeoplesList extends Component {
                     The Star Wars Force Awakens - People
                 </div>
                 <div className="ui five cards">
-                    <Infinite elementHeight={200}
+                    <Infinite elementHeight={330}
                               onInfiniteLoad={this.loader}
-                              infiniteLoadBeginEdgeOffset={112}
+                              infiniteLoadBeginEdgeOffset={230}
                               loadingSpinnerDelegate={this.elementInfiniteLoad()}
                               useWindowAsScrollContainer
                               isInfiniteLoading={false}
-                              timeScrollStateLastsForAfterUserScrolls={1000}
+                              timeScrollStateLastsForAfterUserScrolls={4000}
                     >
                         {this.renderPeoples(peoples)}
                     </Infinite>
