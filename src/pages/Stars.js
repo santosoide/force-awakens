@@ -32,19 +32,23 @@ class Stars extends Component {
     render() {
 
         return (
-            <div className="ui segment">
-                <div className="ui yellow message">
-                    The Star Wars Force Awakens
-                </div>
-                <div className="ui one cards">
-                    <StarsList
-                        stars={this.props.stars}
-                        loader={() => { this.nextPagination() }}
-                        hooks={(url) => {
+        <div className="ui four column centered grid">
+            <div className="column">
+                <div className="ui segment">
+                    <div className="ui green message">
+                        <p style={{textAlign:'center'}}>The Star Wars Force Awakens</p>
+                    </div>
+                    <div className="ui one cards">
+                        <StarsList
+                            stars={this.props.stars}
+                            loader={() => { this.nextPagination() }}
+                            hooks={(url) => {
                             this.openHooks(url)
                     }}/>
+                    </div>
                 </div>
             </div>
+        </div>
         )
     }
 }
