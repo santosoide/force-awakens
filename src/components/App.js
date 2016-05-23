@@ -1,12 +1,12 @@
 import React ,{Component}from 'react';
-import Navbar from './../components/Navbar';
+import Parallax from '../components/ParallaxHome';
 
 export default class App extends Component {
 
     render() {
         return (
             <div>
-                <Navbar />
+                <Parallax />
                 <div className="ui segment">
                     {this.props.children}
                 </div>

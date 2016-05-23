@@ -1,19 +1,16 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory} from 'react-router'
 import App from './pages/App';
-import HomePage from './pages/Home';
 import NotFound from './pages/NotFound';
-import SignUpPage from './pages/SignUp';
 import SignInPage from './pages/SignIn';
-import PeoplePage from './pages/PeopleIndex';
-import PeopleShow from './pages/PeopleShow';
+import HomePage from './pages/Stars';
 
 export default (
     <Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={HomePage}/>
-            <Route path="people" component={PeoplePage}/>
-            <Route path="people/:id" component={PeopleShow}/>
+            <Route path="/stars" component={HomePage}/>
+            <Route path="stars/:id" component={HomePage}/>
         </Route>
         <Route path="/signin" component={SignInPage}/>
         <Route path="*" component={NotFound}/>

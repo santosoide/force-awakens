@@ -92,8 +92,9 @@ const ParallaxHome = () => {
             </Background>
             <div className="container text-center text-muted">
                 <div className="row-fluid">
-                    <div className="row" style={{marginTop:160,marginBottom:80,color:'#ffffff'}}>
+                    <div className="row" style={{marginTop:200,marginBottom:100,color:'#ffffff'}}>
                         <div style={s.flexsearchWrapper}>
+                            <br/>
                         </div>
                     </div>
                 </div>
