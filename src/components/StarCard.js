@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
 
-const StarCard = ({ star, onClick }) => (
+const StarCard = ({ star }) => (
     <div className="ui card">
         <div className="content">
             <div className="header">{star.name}</div>
@@ -53,7 +53,7 @@ const StarCard = ({ star, onClick }) => (
                               </span>
                               <span className="right floated">
                                 <i className="long arrow right icon"></i>
-                                <Link to={`star/${star.id}`}>See More</Link>
+                                <Link to={`star/${star.id}`}>See Profile</Link>
                               </span>
         </div>
     </div>

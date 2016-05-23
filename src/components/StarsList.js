@@ -14,9 +14,7 @@ const StarsList = ({stars, loader, hooks}) => (
                     <StarCard
                         key={id}
                         star={star}
-                        onClick={() => {
-            hooks(`/star/${star.id}`)
-          }}/>
+                    />
                 )
             }
         )}
