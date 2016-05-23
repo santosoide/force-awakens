@@ -3,10 +3,10 @@ import {
 } from '../actions/peoples';
 
 const INITIAL_STATE = {
-    peoplesList: {peoples: [], error: null, loading: false}
+    peoplesList: {peoples: {results: []}, error: null, loading: false}
 };
 
-export default function(state = INITIAL_STATE, action) {
+export default function (state = INITIAL_STATE, action) {
     let error;
 
     switch (action.type) {
@@ -14,6 +14,13 @@ export default function(state = INITIAL_STATE, action) {
             // start fetching peoples and set loading = true
             return {...state, peoplesList: {peoples: [], error: null, loading: true}};
         case FETCH_PEOPLES_SUCCESS:
+            let data = action.payload.data.results.map((people) => {
+                let chunkedUrl = people.url.split('/').filter((char) => {
+                    return char !== ''
+                });
+                people.id = chunkedUrl[chunkedUrl.length - 1];
+                return people
+            });
             // return list of peoples and make loading = false
             return {...state, peoplesList: {peoples: action.payload.data, error: null, loading: false}};
         case FETCH_PEOPLES_FAILURE:

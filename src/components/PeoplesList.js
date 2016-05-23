@@ -12,6 +12,7 @@ class PeoplesList extends Component {
 
     componentWillMount() {
         this.props.fetchPeoples(this.nextPage);
+        console.log(this.props.peoplesList);
     }
 
     loader() {
@@ -20,9 +21,6 @@ class PeoplesList extends Component {
     }
 
     renderPeoples(peoples) {
-        if (!Array.isArray(peoples.results)) {
-            return false;
-        }
 
         return peoples.results.map((people) => {
             return (
@@ -77,7 +75,7 @@ class PeoplesList extends Component {
                               </span>
                               <span className="right floated star">
                                 <i className="star icon"></i>
-                                Favorite
+                                <Link property="detail" to={`people/${people.id}`}>See More</Link>
                               </span>
                     </div>
                 </div>
@@ -122,12 +120,13 @@ class PeoplesList extends Component {
                 </div>
                 <div className="ui five cards">
                     <Infinite elementHeight={200}
-                              preloadBatchSize={Infinite.containerHeightScaleFactor(2)}
-                              preloadAdditionalHeight={Infinite.containerHeightScaleFactor(2)}
                               onInfiniteLoad={this.loader}
                               infiniteLoadBeginEdgeOffset={112}
                               loadingSpinnerDelegate={this.elementInfiniteLoad()}
-                              useWindowAsScrollContainer>
+                              useWindowAsScrollContainer
+                              isInfiniteLoading={false}
+                              timeScrollStateLastsForAfterUserScrolls={1000}
+                    >
                         {this.renderPeoples(peoples)}
                     </Infinite>
                 </div>
