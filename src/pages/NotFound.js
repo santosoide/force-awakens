@@ -6,11 +6,10 @@ class NotFound extends Component {
         return (
             <div>
                 <div className="ui segment">
-                    <div className="ui yellow message">
-                        <i className="search icon"></i>
-                        <pre>Page NotFound</pre>
-                        <Link property="notfound" to="/">Back to home</Link>
-
+                    <div className="ui red message">
+                        <i className="frown icon"></i>
+                        <pre>Oh no you lost on Tatooine planet</pre>
+                        <Link to="/"> Back to Earth!!</Link>
                     </div>
                 </div>
             </div>
