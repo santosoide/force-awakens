@@ -5,11 +5,15 @@ class NotFound extends Component {
     render() {
         return (
             <div>
-                <div className="ui segment">
-                    <div className="ui red message">
-                        <i className="frown icon"></i>
-                        <pre>Oh no you lost on Tatooine planet</pre>
-                        <Link to="/"> Back to Earth!!</Link>
+                <div className="ui three column centered grid" style={{marginTop:'40px'}}>
+                    <div className="column">
+                        <div className="ui segment">
+                            <div className="ui red message" style={{textAlign:'center'}}>
+                                <i className="frown icon"></i>
+                                <pre>Oh no you lost on Tatooine planet</pre>
+                                <Link to="/"> Back to Earth!!</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
