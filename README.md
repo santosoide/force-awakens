@@ -9,6 +9,7 @@ Framework and Libraries
 - Redux
 - Infinite Scroll
 - Semantic-ui
+- api starwars using [swapi.co](http://swapi.co)
 
 # [Demo Apps](http://starwars.kodesoft.co.id) 
 
