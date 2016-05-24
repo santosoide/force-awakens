@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 import {Link} from 'react-router';
 
-const StarCard = ({ star }) => (
+const StarDetail = ({ star }) => (
     <div className="ui fluid card">
         <div className="content">
             <div className="header">{star.name}</div>
@@ -52,15 +52,15 @@ const StarCard = ({ star }) => (
                                 Like
                               </span>
                               <span className="right floated">
-                                <i className="long arrow right icon"></i>
-                                <Link to={`stars/${star.id}`}>See Profile</Link>
+                                <i className="long arrow left icon"></i>
+                                <Link to='/'>Back to Home</Link>
                               </span>
         </div>
     </div>
 );
 
-StarCard.propTypes = {
+StarDetail.propTypes = {
     star: PropTypes.object.isRequired
 };
 
-export default StarCard
+export default StarDetail
