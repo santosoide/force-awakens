@@ -1,12 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from '../reducers/stars_reducers'
 import thunkMiddleware from 'redux-thunk';
+import createLogger from 'redux-logger';
 
+const logger = createLogger();
 const middlewares = [thunkMiddleware];
 
 export default function Apps(initialState) {
     const finalCreateStore = compose(
-        applyMiddleware(...middlewares),
+        applyMiddleware(...middlewares, logger),
         window.devToolsExtension ? window.devToolsExtension() : f => f
     )(createStore);
 
