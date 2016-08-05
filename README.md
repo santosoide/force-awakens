@@ -11,7 +11,7 @@ Framework and Libraries
 - Semantic-ui
 - api starwars using [swapi.co](http://swapi.co)
 
-# [Demo Apps](http://starwars.kodesoft.co.id) 
+# [Demo Apps](http://swapi-reactjs.surge.sh) 
 
 # Installation
 
