@@ -1,17 +1,23 @@
 import axios from 'axios'
-const API_URL = 'http://swapi.co/api/people';
+
+const httpClient = axios.create({
+  baseURL: 'https://swapi.co/api',
+  headers: {
+    'Content-Type': 'application/json',
+  }
+});
 
 export default {
 
     fetchStars: (page = 1) => {
-        return axios.get(`${API_URL}/?page=${page}`)
+        return httpClient.get(`/people?page=${page}`)
     },
 
     fetchStar: (id) => {
-        return axios.get(`${API_URL}/${id}`)
+        return httpClient.get(`/people/${id}`)
     },
 
     loadAdditional: (url) => {
-        return axios.get(url)
+        return httpClient.get('/people')
     }
 }
